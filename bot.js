@@ -26,9 +26,6 @@ const token = process.env.DISCORD_ID;
 client.login(token);
 
 client.on("messageCreate", async (message) => {
-  // || "String" like you did before would return "true" in every single instance,
-  // this is case sensitive, if you wanna make it case insensitive
-  // use `message.content.toLowerCase() == "lowercasestring"`
   if (message.content.charAt(0) == "!") {
     let command = message.content.split("!")[1];
     let commandNum = parseInt(command);
@@ -38,7 +35,6 @@ client.on("messageCreate", async (message) => {
     }
 
     if (command != "") {
-      console.log("calling");
       const provider = new ethers.providers.JsonRpcProvider(
         `https://fragrant-maximum-lake.discover.quiknode.pro/${process.env.API_KEY}/`
       );
