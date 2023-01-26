@@ -1,25 +1,67 @@
-const Discord = require("discord.js");
 require("dotenv").config();
-const sdk = require("api")("@opensea/v1.0#10fy4ug30l7qohm4q");
-const client = new Discord.Client();
+const {
+  Client,
+  Events,
+  GatewayIntentBits,
+  EmbedBuilder,
+} = require("discord.js");
 
-client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+// Create a new client instance
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
 });
+const ethers = require("ethers");
 
-client.on("message", (message) => {
-  if (message.author.bot) {
-    return;
-  }
+// When the client is ready, run this code (only once)
+// We use 'c' for the event parameter to keep it separate from the already defined 'client'
+client.once(Events.ClientReady, (c) => {
+  console.log(`Ready! Logged in as ${c.user.tag}`);
+});
+const token = process.env.DISCORD_ID;
+// Log in to Discord with your client's token
+client.login(token);
 
-  if (messsage === "random") {
-    //retrieve random id from opensea
-  } else {
-    //try and parse id
-    let id = parseInt(message);
+client.on("messageCreate", async (message) => {
+  // || "String" like you did before would return "true" in every single instance,
+  // this is case sensitive, if you wanna make it case insensitive
+  // use `message.content.toLowerCase() == "lowercasestring"`
+  if (message.content.charAt(0) == "!") {
+    let command = message.content.split("!")[1];
+    let commandNum = parseInt(command);
+    if (commandNum != NaN && commandNum > 0 && commandNum < 9001) {
+    } else if (command === "random") {
+      command = parseInt(Math.random() * (9000 - 1) + 1).toString();
+    }
 
-    //return image data in chat
+    if (command != "") {
+      console.log("calling");
+      const provider = new ethers.providers.JsonRpcProvider(
+        `https://fragrant-maximum-lake.discover.quiknode.pro/${process.env.API_KEY}/`
+      );
+      provider.connection.headers = { "x-qn-api-version": 1 };
+      provider
+        .send("qn_fetchNFTsByCollection", {
+          collection: "0x231d3559aa848Bf10366fB9868590F01d34bF240",
+          omitFields: ["traits"],
+          tokens: [command],
+          page: 1,
+          perPage: 10,
+        })
+        .then((res) => {
+          const embedValhalla = new EmbedBuilder()
+            .setColor(0x0099ff)
+            .setTitle(`Valhalla ${command}`)
+            .setImage(res.tokens[0].imageUrl);
+          message.channel.send({ embeds: [embedValhalla] });
+          return res;
+        })
+        .catch((err) => {
+          console.log(JSON.stringify(err));
+        });
+    }
   }
 });
-
-client.login(process.env.DISCORD_ID);
