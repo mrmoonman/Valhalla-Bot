@@ -1,0 +1,182 @@
+{
+    "Longhorn": {
+      "translations": [
+        {
+          "category": "greeting",
+          "tex": ["Howdy ", "Howdy Partner! ", "Howdy Pardner ", "greetings longhorn "],
+          "eng": ["sup ", "sah", "hey", "hi ", "hello", "good morning", "morn"]
+        },
+        {
+          "category": "farewell",
+          "tex": [
+            "Adios, pardna",
+            "Church is out",
+            "Don't take any wooden nickels",
+            "Don't let the door hit ya' where the goodl ord split ya.",
+            "Holler if you need me",
+            "It's time to heat up the bricks.",
+            "It's time to put the chairs in the wagon.",
+            "Keep your saddle oiled and your gun geased",
+            "Let's blow this pop stand",
+            "Let's head for the wagon yard",
+            "Let's light a shuck",
+            "That about puts the rag on the bush",
+            "That's all she wrote",
+            "Time to pour on the fire and call in the dogs",
+            "Well let me get on about my rat killin",
+            "Ya'll come back now, hear?"
+          ],
+          "eng": ["bye ", "cya", "l8r", "peace out", "cya later", "peace", "goodnight", "night guys", "farewell", "adios", "goodbye"]
+        },
+        {
+          "category": "noun",
+          "tex": [
+            "Cowboy",
+            "Caballlero",
+            "Dixie",
+            "Rancher",
+            "Partner",
+            "Pardner"
+          ],
+          "eng": [
+            "Guys",
+            "girls",
+            "dude",
+            "lad",
+            "lads",
+            "gang",
+            "mike",
+            "conner",
+            "sally",
+            "sallyzar",
+            "evan",
+            "liza",
+            "lisa",
+            "alan",
+            "c-ner",
+            "ceezner",
+            "jordan",
+            "kevin",
+            "kev",
+            "cbom",
+            "erv",
+            "brodie"
+          ]
+        }
+      ],
+      "dictionary": [
+        {
+          "eng": "goin",
+          "tex": "fixin"
+        },
+        {
+          "eng": "give ",
+          "tex": "gimme "
+        },
+        {
+          "eng": "get ",
+          "tex": "get on at "
+        },
+        {
+          "eng": "anything",
+          "tex": "in'thang"
+        },
+        {
+          "eng": "nothing",
+          "tex": "nuttin'"
+        },
+        {
+          "eng": "old ",
+          "tex": "ole "
+        },
+        {
+          "eng": "over there",
+          "tex": "ov'air"
+        },
+        {
+          "eng": "come over",
+          "tex": "git over here"
+        },
+        {
+          "eng": "small",
+          "tex": "piddlee'o"
+        },
+        {
+          "eng": "pretty",
+          "tex": "purtee"
+        },
+        {
+          "eng": "something",
+          "tex": "sump'in"
+        },
+        {
+          "eng": "thing ",
+          "tex": "thang "
+        },
+        {
+          "eng": "another",
+          "tex": "whole 'nuther"
+        },
+        {
+          "eng": "Your",
+          "tex": "yer"
+        },
+        {
+          "eng": "youre",
+          "tex": "yer"
+        },
+        {
+          "eng": "you're",
+          "tex": "yer"
+        },
+        {
+          "eng": "over there",
+          "tex": "over yonder"
+        },
+        {
+          "eng": "over here",
+          "tex": "up yonder"
+        },
+        {
+          "eng": "everything",
+          "tex": "ev'thang"
+        },
+        {
+          "eng": "call ",
+          "tex": "caw "
+        },
+        {
+          "eng": "alright",
+          "tex": "ah'ite"
+        },
+        {
+          "eng": "get out",
+          "tex": "git on out now"
+        },
+        {
+          "eng": "anything",
+          "tex": "in'thang"
+        },
+        {
+          "eng": "i think",
+          "tex": "i reckon"
+        },
+        {
+          "eng": "you think",
+          "tex": "you reckon"
+        },
+        {
+          "eng": "ugly",
+          "tex": "uglier than sin"
+        },
+        {
+          "eng": "nervous",
+          "tex": "sweating like a whore in church"
+        },
+        {
+          "eng": "anyone",
+          "tex": "any ya'll"
+        }
+      ]
+    }
+  }

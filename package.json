@@ -1,0 +1,16 @@
+{
+  "name": "valhalla-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "api": "^5.0.7",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sallyzar",
+  "license": "ISC"
+}
