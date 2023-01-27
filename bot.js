@@ -14,8 +14,6 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
   ],
 });
-const ethers = require("ethers");
-
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, (c) => {
@@ -35,29 +33,13 @@ client.on("messageCreate", async (message) => {
     }
 
     if (command != "") {
-      const provider = new ethers.providers.JsonRpcProvider(
-        `https://fragrant-maximum-lake.discover.quiknode.pro/${process.env.API_KEY}/`
-      );
-      provider.connection.headers = { "x-qn-api-version": 1 };
-      provider
-        .send("qn_fetchNFTsByCollection", {
-          collection: "0x231d3559aa848Bf10366fB9868590F01d34bF240",
-          omitFields: ["traits"],
-          tokens: [command],
-          page: 1,
-          perPage: 10,
-        })
-        .then((res) => {
-          const embedValhalla = new EmbedBuilder()
-            .setColor(0x0099ff)
-            .setTitle(`Valhalla ${command}`)
-            .setImage(res.tokens[0].imageUrl);
-          message.channel.send({ embeds: [embedValhalla] });
-          return res;
-        })
-        .catch((err) => {
-          console.log(JSON.stringify(err));
-        });
+      const embedValhalla = new EmbedBuilder()
+        .setColor(0x0099ff)
+        .setTitle(`Valhalla ${command}`)
+        .setImage(
+          `https://valhalla-nft-production-compressed.s3.amazonaws.com/${command}.png`
+        );
+      message.channel.send({ embeds: [embedValhalla] });
     }
   }
 });

@@ -4,10 +4,8 @@
   "description": "",
   "main": "bot.js",
   "dependencies": {
-    "api": "^5.0.7",
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3",
-    "ethers": "^5.7.2"
+    "dotenv": "^16.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
